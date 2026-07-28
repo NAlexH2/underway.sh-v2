@@ -1,0 +1,407 @@
+/*
+ * 03 · revision — identity as a version-controlled file.
+ * Editorial dark on charcoal, mono for structure + a readable prose face.
+ * Flat fills and hard 1px lines only (no soft gradients — they band on Firefox).
+ * All headings get explicit size/line-height/margin/color/text-align to beat
+ * the global bare-tag styles; lists reset list-style + ::before content.
+ */
+
+.root {
+  position: relative;
+  min-height: 100vh;
+  background: #14161a;
+  color: #e6e3db;
+  padding: clamp(1.25rem, 4vw, 3rem) clamp(1rem, 4vw, 2rem);
+  font-family: ui-sans-serif, system-ui, "Josefin", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.file {
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+/* ---------- header ---------- */
+
+.fileHeader {
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.headBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.4rem 0.65rem;
+  border: 1px solid #2b2f37;
+  background: #1b1e24;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: clamp(0.78rem, 1.6vw, 0.9rem);
+}
+
+.path {
+  color: #c8c4ba;
+  letter-spacing: 0.02em;
+}
+
+.chip {
+  color: #e8a2b8;
+  border: 1px solid #4a2f3a;
+  background: #201a1d;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.82em;
+  white-space: nowrap;
+}
+
+.amended {
+  margin: 0.6rem 0 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: clamp(0.72rem, 1.5vw, 0.82rem);
+  color: #9b978d;
+  text-align: left;
+  letter-spacing: 0.04em;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 2.5vw, 1.25rem);
+  margin-top: clamp(1rem, 3vw, 1.5rem);
+}
+
+.seal {
+  display: block;
+  width: clamp(56px, 12vw, 72px);
+  height: auto;
+  flex: none;
+}
+
+.name {
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: clamp(2.5rem, 9vw, 4rem);
+  line-height: 1;
+  color: #f2efe7;
+  text-align: left;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.tagline {
+  margin: clamp(0.9rem, 2.5vw, 1.25rem) 0 0;
+  font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+  line-height: 1.5;
+  color: #d7d3ca;
+  max-width: 36ch;
+}
+
+/* ---------- NOTE admonition ---------- */
+
+.note {
+  margin: clamp(1.25rem, 3vw, 1.75rem) 0;
+  border: 1px solid #2b2f37;
+  border-left: 3px solid #c2607e;
+  background: #1b1e24;
+  padding: clamp(0.9rem, 2.5vw, 1.15rem) clamp(1rem, 3vw, 1.35rem);
+}
+
+.noteLabel {
+  margin: 0 0 0.35rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: #e8a2b8;
+  text-align: left;
+}
+
+.noteLead {
+  margin: 0 0 0.3rem;
+  font-weight: 600;
+  color: #ece9e1;
+  line-height: 1.45;
+}
+
+.noteBody {
+  margin: 0;
+  color: #c9c5bc;
+  line-height: 1.55;
+  font-size: 0.98rem;
+}
+
+/* ---------- YAML front-matter ---------- */
+
+.frontMatter {
+  margin: clamp(1.5rem, 4vw, 2.25rem) 0;
+}
+
+.hair {
+  border: 0;
+  border-top: 1px solid #3a3f48;
+  margin: 0;
+}
+
+.yaml {
+  margin: 0;
+  padding: clamp(0.75rem, 2vw, 1rem) 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: clamp(0.85rem, 1.9vw, 0.95rem);
+}
+
+.yamlRow {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.22rem 0;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.yamlKey {
+  color: #e8a2b8;
+  flex: none;
+}
+
+.yamlValue {
+  margin: 0;
+  color: #ded9d0;
+}
+
+/* ---------- diff panel ---------- */
+
+.diffPanel {
+  margin: clamp(1.5rem, 4vw, 2.25rem) 0;
+  border: 1px solid #2b2f37;
+  background: #1b1e24;
+}
+
+.diffHeading {
+  margin: 0;
+  padding: 0.55rem 0.85rem;
+  border-bottom: 1px solid #2b2f37;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  line-height: 1.3;
+  color: #e8a2b8;
+  text-align: left;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+
+.diff {
+  padding: clamp(0.65rem, 2vw, 0.9rem) clamp(0.75rem, 2vw, 1rem);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: clamp(0.82rem, 1.8vw, 0.92rem);
+  line-height: 1.6;
+}
+
+.diffPair {
+  padding: 0.15rem 0;
+}
+
+.diffPair + .diffPair {
+  margin-top: 0.35rem;
+  border-top: 1px solid #23262d;
+  padding-top: 0.5rem;
+}
+
+.diffMinus,
+.diffPlus {
+  margin: 0;
+  padding: 0.1rem 0.4rem;
+}
+
+.diffMinus {
+  color: #d98a8a;
+  background: #201a1c;
+}
+
+.diffPlus {
+  color: #6fbf8b;
+  background: #171f1a;
+}
+
+.diffSign {
+  opacity: 0.85;
+  user-select: none;
+}
+
+/* ---------- body / commit message ---------- */
+
+.body {
+  margin: clamp(1.75rem, 4vw, 2.5rem) 0;
+  max-width: 62ch;
+  font-family: Georgia, Cambria, "Times New Roman", serif;
+}
+
+.prose {
+  margin: 0 0 1.1rem;
+  font-size: clamp(1rem, 2.2vw, 1.12rem);
+  line-height: 1.7;
+  color: #ddd9d0;
+}
+
+.proseLede {
+  color: #f0ede5;
+}
+
+.prose:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- changelog timeline ---------- */
+
+.log {
+  margin: clamp(1.75rem, 4vw, 2.5rem) 0;
+}
+
+.logHeading {
+  margin: 0 0 clamp(1rem, 2.5vw, 1.35rem);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: clamp(0.85rem, 1.9vw, 0.95rem);
+  line-height: 1.3;
+  color: #9b978d;
+  text-align: left;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 clamp(1rem, 3vw, 1.5rem);
+  border-left: 1px solid #3a3f48;
+}
+
+.entry {
+  position: relative;
+  padding: 0 0 clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.entry::before {
+  content: none;
+}
+
+.entry:last-child {
+  padding-bottom: 0;
+}
+
+.hash {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+  color: #e8a2b8;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.3rem;
+}
+
+.entryTitle {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.28rem);
+  line-height: 1.3;
+  color: #f0ede5;
+  text-align: left;
+  font-weight: 600;
+}
+
+.entryBody {
+  margin: 0;
+  font-family: Georgia, Cambria, "Times New Roman", serif;
+  font-size: clamp(0.98rem, 2.1vw, 1.08rem);
+  line-height: 1.65;
+  color: #d3cfc6;
+  max-width: 60ch;
+}
+
+/* ---------- footer ---------- */
+
+.footer {
+  margin-top: clamp(2rem, 5vw, 3rem);
+  padding-top: clamp(1rem, 3vw, 1.5rem);
+  border-top: 1px solid #2b2f37;
+}
+
+.branch {
+  margin: 0 0 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: clamp(0.82rem, 1.8vw, 0.92rem);
+  text-align: left;
+}
+
+.branchLabel {
+  color: #c8c4ba;
+}
+
+.branchOk {
+  color: #6fbf8b;
+}
+
+.footerLinks {
+  display: flex;
+  gap: clamp(1rem, 4vw, 2rem);
+  flex-wrap: wrap;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: clamp(0.85rem, 1.9vw, 0.95rem);
+}
+
+.footerLink {
+  color: #e8a2b8;
+  text-decoration: none;
+  border-bottom: 1px solid #4a2f3a;
+  padding-bottom: 1px;
+  transition: color 120ms ease, border-color 120ms ease;
+}
+
+.footerLink:hover,
+.footerLink:focus-visible {
+  color: #f4c4d3;
+  border-color: #c2607e;
+}
+
+/* ---------- entrance motion (opt-out under reduced-motion) ---------- */
+
+.diffPlus {
+  animation: rise 400ms ease both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diffPlus {
+    animation: none;
+  }
+  .footerLink {
+    transition: none;
+  }
+}
+
+/* ---------- mobile ---------- */
+
+@media (max-width: 700px) {
+  .titleRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .headBar {
+    font-size: 0.76rem;
+  }
+
+  .yamlRow {
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .tagline {
+    max-width: none;
+  }
+}

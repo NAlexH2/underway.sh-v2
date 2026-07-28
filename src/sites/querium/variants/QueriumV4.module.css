@@ -1,0 +1,309 @@
+/*
+ * 04 · quiet — Swiss / editorial minimalism.
+ * Off-white paper (#faf7f2), near-black ink (#1a1815). Rose (#b45a78) is the
+ * only color, used sparingly as a single hairline and one small mark.
+ * All heading sizes/margins/colors/alignment are set locally to defeat the
+ * global bare-element styles; list markers and ::before are reset.
+ */
+
+.root {
+  position: relative;
+  min-height: 100vh;
+  background: #faf7f2;
+  color: #1a1815;
+  font-family: "Josefin", system-ui, -apple-system, "Segoe UI", Helvetica, Arial,
+    sans-serif;
+  padding: clamp(2rem, 6vw, 6rem) clamp(1.25rem, 5vw, 4rem)
+    clamp(3rem, 8vw, 7rem);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Asymmetric grid: wide left margin, narrow content column. */
+.grid {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 2.4fr);
+  column-gap: clamp(2rem, 6vw, 6rem);
+  row-gap: clamp(2.75rem, 7vw, 5.5rem);
+}
+
+/* Header spans full width; content stays in the right (narrow) column. */
+.header {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.label {
+  grid-column: 1;
+  margin: 0 0 0.9rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: clamp(0.62rem, 0.8vw, 0.72rem);
+  line-height: 1.4;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #5b544c;
+  text-align: left;
+}
+
+.name {
+  margin: 0.2rem 0 0;
+  font-family: "Josefin", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: clamp(2.6rem, 8vw, 5.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  color: #1a1815;
+  text-align: left;
+}
+
+/* The single rose hairline — decorative accent, not text. */
+.name::after {
+  content: "";
+  display: block;
+  width: clamp(3rem, 8vw, 5rem);
+  height: 2px;
+  margin-top: clamp(1rem, 2vw, 1.4rem);
+  background: #b45a78;
+}
+
+.tagline {
+  max-width: 46ch;
+  margin: clamp(1.1rem, 2.4vw, 1.6rem) 0 0;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  line-height: 1.55;
+  color: #3a352f;
+  text-align: left;
+}
+
+/* Notice — understated but clearly set apart near the top. */
+.note {
+  grid-column: 1 / -1;
+  max-width: 62ch;
+  padding-left: clamp(0.9rem, 2vw, 1.4rem);
+  border-left: 1px solid #d8d0c6;
+}
+
+.noteLabel {
+  margin: 0 0 0.55rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.68rem;
+  line-height: 1.4;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #5b544c;
+  text-align: left;
+}
+
+.noteLead {
+  margin: 0 0 0.35rem;
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  line-height: 1.5;
+  font-weight: 600;
+  color: #2a2620;
+  text-align: left;
+}
+
+.noteBody {
+  margin: 0;
+  max-width: 58ch;
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  line-height: 1.55;
+  color: #4a443d;
+  text-align: left;
+}
+
+/* Blocks sit in the right column, their label in the left. */
+.block {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+.block > .label {
+  grid-column: 1;
+}
+
+.block > .manifest,
+.block > .prose,
+.block > .principles {
+  grid-column: 2;
+}
+
+/* Manifest — spare definition list, hairline rules, no boxes. */
+.manifest {
+  margin: 0;
+  border-top: 1px solid #ded6cc;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(8rem, 12rem) 1fr;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  padding: clamp(0.85rem, 1.8vw, 1.15rem) 0;
+  border-bottom: 1px solid #ded6cc;
+}
+
+.term {
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: clamp(0.72rem, 0.95vw, 0.8rem);
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  color: #5b544c;
+}
+
+.desc {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.35vw, 1.05rem);
+  line-height: 1.5;
+  color: #1a1815;
+}
+
+/* Prose — real hierarchy at a comfortable measure. */
+.prose {
+  max-width: 62ch;
+}
+
+.paragraph {
+  margin: 0 0 clamp(1.1rem, 2.4vw, 1.5rem);
+  font-size: clamp(1.02rem, 1.5vw, 1.18rem);
+  line-height: 1.62;
+  color: #26221d;
+  text-align: left;
+}
+
+.paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Principles — numbered 01–04, hairline each, no cards. */
+.principles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 62ch;
+}
+
+.principles > .principle::before {
+  content: none;
+}
+
+.principle {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  padding: clamp(1.2rem, 2.6vw, 1.75rem) 0;
+  border-top: 1px solid #ded6cc;
+}
+
+.principle:last-child {
+  border-bottom: 1px solid #ded6cc;
+}
+
+.numeral {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: clamp(0.78rem, 1vw, 0.9rem);
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+  color: #5b544c;
+}
+
+.principleText {
+  min-width: 0;
+}
+
+.principleTitle {
+  margin: 0 0 0.4rem;
+  font-family: "Josefin", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.05rem, 1.6vw, 1.28rem);
+  line-height: 1.25;
+  letter-spacing: 0;
+  color: #1a1815;
+  text-align: left;
+}
+
+.principleBody {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  line-height: 1.6;
+  color: #3a352f;
+  text-align: left;
+}
+
+/* Minimal footer. */
+.footer {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+  border-top: 1px solid #ded6cc;
+}
+
+.seal {
+  display: block;
+  width: 40px;
+  height: 40px;
+  opacity: 0.85;
+}
+
+.links {
+  display: flex;
+  gap: clamp(1.25rem, 4vw, 3rem);
+}
+
+.link {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: clamp(0.75rem, 1vw, 0.85rem);
+  letter-spacing: 0.04em;
+  color: #2a2620;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 180ms ease, color 180ms ease;
+}
+
+.link:hover,
+.link:focus-visible {
+  color: #b45a78;
+  border-bottom-color: #b45a78;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link {
+    transition: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+    row-gap: clamp(2.25rem, 9vw, 3rem);
+  }
+
+  .block {
+    display: block;
+  }
+
+  .block > .label {
+    margin-bottom: 1rem;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}

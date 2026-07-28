@@ -5,7 +5,9 @@ import "./styles/main.css";
 import { Bio, Experience, Projects } from "@routes/index";
 import { resolveSite, type Site } from "./sites/siteFromHost";
 import Landing from "./sites/landing/Landing";
-import Querium from "./sites/querium/Querium";
+// q-design-explore branch: the querium site renders the variant gallery instead
+// of the single live page, so all designs are comparable on one URL.
+import Querium from "./sites/querium/variants/QueriumGallery";
 
 // Alex's profile keeps its own routes; it just no longer owns the apex.
 const profileRouter = createBrowserRouter([

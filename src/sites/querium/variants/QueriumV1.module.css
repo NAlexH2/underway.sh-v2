@@ -1,0 +1,298 @@
+/*
+ * 01 · correspondence — warm paper stationery.
+ * Palette: paper #f4ece1, ink #2a2320, rose accent #b25f7c (decorative only,
+ * 3.7:1) and deeper rose #8f4460 (real text, 5.6:1 on paper). Serif body,
+ * hairline rules, one rose accent used sparingly.
+ */
+
+.root {
+  position: relative;
+  min-height: 100vh;
+  background: #f4ece1;
+  color: #2a2320;
+  padding: clamp(1.5rem, 5vw, 4rem) clamp(1rem, 4vw, 3rem);
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+}
+
+.sheet {
+  max-width: 64ch;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 3.5rem) 0;
+}
+
+/* Letterhead ------------------------------------------------------------- */
+
+.letterhead {
+  text-align: center;
+  margin: 0 0 clamp(2rem, 5vw, 3rem);
+}
+
+.seal {
+  display: block;
+  width: clamp(72px, 12vw, 96px);
+  height: auto;
+  margin: 0 auto clamp(1rem, 3vw, 1.75rem);
+  filter: drop-shadow(0 1px 3px rgba(143, 68, 96, 0.35));
+  animation: sealFade 900ms ease-out both;
+}
+
+@keyframes sealFade {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.name {
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-size: clamp(2.6rem, 8vw, 4rem);
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #2a2320;
+  margin: 0 0 clamp(0.75rem, 2vw, 1.1rem);
+}
+
+.tagline {
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.6vw, 1.3rem);
+  line-height: 1.6;
+  color: #453b35;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 52ch;
+}
+
+/* Notice ----------------------------------------------------------------- */
+
+.notice {
+  margin: clamp(1.75rem, 4vw, 2.5rem) 0 0;
+  padding: 0.25rem 0 0.25rem clamp(1rem, 3vw, 1.5rem);
+  border-left: 2px solid #b25f7c;
+}
+
+.noticeLabel {
+  font-family: "Josefin", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8f4460;
+  text-align: left;
+  margin: 0 0 0.4rem;
+}
+
+.noticeLead {
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+  line-height: 1.55;
+  font-style: italic;
+  color: #2a2320;
+  margin: 0 0 0.35rem;
+}
+
+.noticeBody {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  line-height: 1.6;
+  color: #453b35;
+  margin: 0;
+}
+
+/* Hairline rules --------------------------------------------------------- */
+
+.rule {
+  border: 0;
+  border-top: 1px solid rgba(178, 95, 124, 0.5);
+  margin: clamp(2rem, 5vw, 3rem) 0;
+}
+
+/* Section headings ------------------------------------------------------- */
+
+.sectionHeading {
+  font-family: "Josefin", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #8f4460;
+  text-align: center;
+  line-height: 1.4;
+  margin: 0 0 clamp(1.25rem, 3vw, 1.75rem);
+}
+
+/* Manifest --------------------------------------------------------------- */
+
+.manifest {
+  margin: 0;
+}
+
+.manifestRow {
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  gap: 0 clamp(1rem, 3vw, 2rem);
+  align-items: baseline;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(178, 95, 124, 0.28);
+}
+
+.manifestRow:first-child {
+  border-top: 1px solid rgba(178, 95, 124, 0.28);
+}
+
+.manifestKey {
+  font-family: "Josefin", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8f4460;
+  line-height: 1.5;
+}
+
+.manifestValue {
+  margin: 0;
+  font-size: clamp(1rem, 2.3vw, 1.1rem);
+  line-height: 1.5;
+  color: #2a2320;
+}
+
+/* Letter body ------------------------------------------------------------ */
+
+.letter {
+  margin: 0;
+}
+
+.prose {
+  font-size: clamp(1.02rem, 2.4vw, 1.16rem);
+  line-height: 1.7;
+  color: #2a2320;
+  margin: 0 0 1.3rem;
+  text-align: left;
+}
+
+.prose:last-child {
+  margin-bottom: 0;
+}
+
+.proseLede::first-letter {
+  float: left;
+  font-size: 3.4em;
+  line-height: 0.82;
+  padding: 0.08em 0.12em 0 0;
+  color: #8f4460;
+  font-weight: 400;
+}
+
+/* Principles ------------------------------------------------------------- */
+
+.principles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.principle {
+  padding: clamp(1rem, 2.5vw, 1.4rem) clamp(1rem, 3vw, 1.6rem);
+  border-top: 1px solid rgba(178, 95, 124, 0.28);
+}
+
+.principle:nth-child(odd) {
+  padding-left: 0;
+  border-right: 1px solid rgba(178, 95, 124, 0.28);
+}
+
+.principle:nth-child(even) {
+  padding-right: 0;
+}
+
+.principleTitle {
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-size: clamp(1.05rem, 2.4vw, 1.2rem);
+  line-height: 1.35;
+  font-weight: 600;
+  font-style: italic;
+  color: #2a2320;
+  text-align: left;
+  margin: 0 0 0.6rem;
+}
+
+.principleBody {
+  font-size: clamp(0.95rem, 2.1vw, 1.02rem);
+  line-height: 1.65;
+  color: #453b35;
+  margin: 0;
+}
+
+/* Signature & footer ----------------------------------------------------- */
+
+.signature {
+  font-family: "Squarepeg", cursive;
+  font-size: clamp(2.4rem, 7vw, 3.4rem);
+  line-height: 1;
+  color: #8f4460;
+  text-align: center;
+  margin: clamp(2.5rem, 6vw, 4rem) 0 clamp(2rem, 5vw, 3rem);
+}
+
+.footer {
+  border-top: 1px solid rgba(178, 95, 124, 0.5);
+  padding-top: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footerLink {
+  font-family: "Josefin", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: #8f4460;
+  text-decoration: none;
+}
+
+.footerLink:hover,
+.footerLink:focus-visible {
+  text-decoration: underline;
+}
+
+.footerNote {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: #6a5c52;
+  text-align: center;
+  font-style: italic;
+  margin: clamp(0.75rem, 2vw, 1rem) 0 0;
+}
+
+/* Mobile ----------------------------------------------------------------- */
+
+@media (max-width: 700px) {
+  .manifestRow {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+    padding: 0.8rem 0;
+  }
+
+  .principles {
+    grid-template-columns: 1fr;
+  }
+
+  .principle,
+  .principle:nth-child(odd),
+  .principle:nth-child(even) {
+    padding: clamp(1rem, 4vw, 1.4rem) 0;
+    border-right: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seal {
+    animation: none;
+  }
+}
