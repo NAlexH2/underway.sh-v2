@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Querium mark: a bold "Q" (Q for short), mint on charcoal. Drawn as
+       geometry rather than a font glyph so it renders identically everywhere
+       and stays crisp down to 16px, where the wax seal turns to mush. -->
+  <rect width="32" height="32" rx="7" fill="#14161a"/>
+  <circle cx="15" cy="15" r="8" fill="none" stroke="#7ee0a0" stroke-width="3"/>
+  <line x1="17.5" y1="17.5" x2="24" y2="24" stroke="#7ee0a0" stroke-width="3" stroke-linecap="round"/>
+</svg>

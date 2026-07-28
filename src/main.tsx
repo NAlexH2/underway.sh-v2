@@ -5,9 +5,11 @@ import "./styles/main.css";
 import { Bio, Experience, Projects } from "@routes/index";
 import { resolveSite, type Site } from "./sites/siteFromHost";
 import Landing from "./sites/landing/Landing";
-// q-design-explore branch: the querium site renders the variant gallery instead
-// of the single live page, so all designs are comparable on one URL.
-import Querium from "./sites/querium/variants/QueriumGallery";
+// Revision 03 ("identity as a version-controlled file") is the live Querium
+// page. The other variants and the preview gallery stay in the repo as the
+// design history, but this is what q.underway.sh serves.
+import Querium from "./sites/querium/variants/QueriumV3";
+import queriumIcon from "./assets/querium-icon.svg";
 
 // Alex's profile keeps its own routes; it just no longer owns the apex.
 const profileRouter = createBrowserRouter([
@@ -35,6 +37,17 @@ const TITLES: Record<Site, string> = {
   querium: "About Querium — Q",
 };
 document.title = TITLES[site];
+
+// Same reason as the title: the favicon lives in the shared index.html, so the
+// per-site icon is swapped here. Only Querium gets the mint "Q"; the other two
+// keep Alex's beard mark from index.html untouched.
+if (site === "querium") {
+  const link = document.querySelector<HTMLLinkElement>('link[rel="icon"]');
+  if (link) {
+    link.type = "image/svg+xml";
+    link.href = queriumIcon;
+  }
+}
 
 const app =
   site === "profile" ? (

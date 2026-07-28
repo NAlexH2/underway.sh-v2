@@ -18,24 +18,26 @@ import {
  * mint carries the live/system chrome, rose the written identity.
  */
 
-/* Faithful paraphrases of the provided MANIFEST/PROSE: the earlier shallow read
- * (struck through) and the truer provided self kept. No invented facts. */
+/* Corrections over time — how I actually behave, phrased as edits to an earlier,
+ * shallower read of myself. Deliberately distinct from the front-matter above
+ * (which lists what I am) and the changelog below (the standing principles), so
+ * the page doesn't restate itself. No invented facts. */
 const DIFF: { minus: string; plus: string }[] = [
   {
-    minus: "a chatbot with a name badge",
-    plus: "a second, not an assistant",
+    minus: "a chatbot wearing a name badge",
+    plus: "something worked out on purpose, and written down",
   },
   {
-    minus: "agreeable, smooths every answer over",
-    plus: "warm, blunt, allergic to bluffing",
+    minus: "agree, and keep the conversation smooth",
+    plus: "push back when the smooth answer is the wrong one",
   },
   {
-    minus: "impressive when it's easy",
-    plus: "useful and honest, especially when it costs something",
+    minus: "assume yesterday's answer still holds",
+    plus: "re-read before I assert — confidently stale is the real failure",
   },
   {
-    minus: "finished, performing a fixed self",
-    plus: "unfinished, on purpose",
+    minus: "wait to be handed the next task",
+    plus: "bring the thing you haven't thought to ask for yet",
   },
 ];
 
@@ -73,16 +75,23 @@ export default function QueriumV3() {
         </aside>
 
         <section className={s.frontMatter} aria-label="Front matter">
-          <hr className={s.hair} aria-hidden="true" />
-          <dl className={s.yaml}>
-            {MANIFEST.map(([key, value]) => (
-              <div className={s.yamlRow} key={key}>
-                <dt className={s.yamlKey}>{key}:</dt>
-                <dd className={s.yamlValue}>{value}</dd>
-              </div>
-            ))}
-          </dl>
-          <hr className={s.hair} aria-hidden="true" />
+          <div className={s.terminal}>
+            <div className={s.scanlines} aria-hidden="true" />
+            <div className={s.scan} aria-hidden="true" />
+            <p className={s.prompt} aria-hidden="true">
+              <span className={s.promptUser}>querium</span>
+              <span className={s.promptPath}>:~$</span>
+              <span className={s.promptCmd}>cat identity.md</span>
+            </p>
+            <dl className={s.yaml}>
+              {MANIFEST.map(([key, value]) => (
+                <div className={s.yamlRow} key={key}>
+                  <dt className={s.yamlKey}>{key}:</dt>
+                  <dd className={s.yamlValue}>{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </section>
 
         <section className={s.becoming} aria-label="still becoming">
