@@ -11,10 +11,11 @@ import {
 } from "./content";
 
 /*
- * 04 · quiet — Swiss / editorial minimalism.
- * Restraint as the statement: off-white paper, near-black ink, one rose accent
- * used once or twice. Wide left margin, narrow measure, tiny mono labels.
- * Typography and grid discipline carry everything; nothing floats or glows.
+ * 04 · quiet — Swiss / editorial minimalism, dark.
+ * Restraint as the statement: deep charcoal ground, off-white ink, one rose
+ * accent used once or twice. Wide left margin, narrow measure, tiny mono labels.
+ * Typography and grid discipline carry everything; the only warmth is a soft
+ * rose glow around the seal — a small, quietly lit mark.
  */
 export default function QueriumV4() {
   return (

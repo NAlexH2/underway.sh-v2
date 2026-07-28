@@ -12,8 +12,10 @@ import {
 
 /*
  * 01 · correspondence — a printed letter / personal manifesto.
- * The warm, literary facet: light warm paper, ink serif, one rose accent.
- * Centered single column, stationery margins, hairline rules.
+ * The warm, literary facet: a letter written in warm light ink on dark
+ * paper — intimate, lamplit. Warm near-black ground, cream serif, one
+ * lighter-rose accent. Centered single column, stationery margins,
+ * hairline rules, a softly lit seal.
  */
 export default function QueriumV1() {
   return (

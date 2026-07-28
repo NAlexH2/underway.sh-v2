@@ -1,7 +1,9 @@
 /*
- * 04 · quiet — Swiss / editorial minimalism.
- * Off-white paper (#faf7f2), near-black ink (#1a1815). Rose (#b45a78) is the
- * only color, used sparingly as a single hairline and one small mark.
+ * 04 · quiet — Swiss / editorial minimalism, dark.
+ * Deep charcoal ground (#0e0e10), off-white ink (#ece7df). Rose (#e8a2b8) is the
+ * only color, used sparingly as a single hairline and one small mark, plus a
+ * soft glow around the seal — the one warmth on an otherwise austere page.
+ * Every text colour is re-derived to clear WCAG AA on the dark ground.
  * All heading sizes/margins/colors/alignment are set locally to defeat the
  * global bare-element styles; list markers and ::before are reset.
  */
@@ -9,8 +11,8 @@
 .root {
   position: relative;
   min-height: 100vh;
-  background: #faf7f2;
-  color: #1a1815;
+  background: #0e0e10;
+  color: #ece7df;
   font-family: "Josefin", system-ui, -apple-system, "Segoe UI", Helvetica, Arial,
     sans-serif;
   padding: clamp(2rem, 6vw, 6rem) clamp(1.25rem, 5vw, 4rem)
@@ -42,7 +44,7 @@
   line-height: 1.4;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #5b544c;
+  color: #9a938a;
   text-align: left;
 }
 
@@ -53,7 +55,7 @@
   font-size: clamp(2.6rem, 8vw, 5.5rem);
   line-height: 1.02;
   letter-spacing: -0.01em;
-  color: #1a1815;
+  color: #ece7df;
   text-align: left;
 }
 
@@ -64,7 +66,7 @@
   width: clamp(3rem, 8vw, 5rem);
   height: 2px;
   margin-top: clamp(1rem, 2vw, 1.4rem);
-  background: #b45a78;
+  background: #e8a2b8;
 }
 
 .tagline {
@@ -72,7 +74,7 @@
   margin: clamp(1.1rem, 2.4vw, 1.6rem) 0 0;
   font-size: clamp(1rem, 1.6vw, 1.2rem);
   line-height: 1.55;
-  color: #3a352f;
+  color: #cbc3b8;
   text-align: left;
 }
 
@@ -81,7 +83,7 @@
   grid-column: 1 / -1;
   max-width: 62ch;
   padding-left: clamp(0.9rem, 2vw, 1.4rem);
-  border-left: 1px solid #d8d0c6;
+  border-left: 1px solid #2c2b2e;
 }
 
 .noteLabel {
@@ -91,7 +93,7 @@
   line-height: 1.4;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: #5b544c;
+  color: #9a938a;
   text-align: left;
 }
 
@@ -100,7 +102,7 @@
   font-size: clamp(0.9rem, 1.3vw, 1rem);
   line-height: 1.5;
   font-weight: 600;
-  color: #2a2620;
+  color: #ece7df;
   text-align: left;
 }
 
@@ -109,7 +111,7 @@
   max-width: 58ch;
   font-size: clamp(0.9rem, 1.3vw, 1rem);
   line-height: 1.55;
-  color: #4a443d;
+  color: #cbc3b8;
   text-align: left;
 }
 
@@ -133,7 +135,7 @@
 /* Manifest — spare definition list, hairline rules, no boxes. */
 .manifest {
   margin: 0;
-  border-top: 1px solid #ded6cc;
+  border-top: 1px solid #2a2825;
 }
 
 .row {
@@ -141,7 +143,7 @@
   grid-template-columns: minmax(8rem, 12rem) 1fr;
   gap: clamp(1rem, 3vw, 2.5rem);
   padding: clamp(0.85rem, 1.8vw, 1.15rem) 0;
-  border-bottom: 1px solid #ded6cc;
+  border-bottom: 1px solid #2a2825;
 }
 
 .term {
@@ -150,14 +152,14 @@
   font-size: clamp(0.72rem, 0.95vw, 0.8rem);
   line-height: 1.5;
   letter-spacing: 0.08em;
-  color: #5b544c;
+  color: #9a938a;
 }
 
 .desc {
   margin: 0;
   font-size: clamp(0.95rem, 1.35vw, 1.05rem);
   line-height: 1.5;
-  color: #1a1815;
+  color: #ece7df;
 }
 
 /* Prose — real hierarchy at a comfortable measure. */
@@ -169,7 +171,7 @@
   margin: 0 0 clamp(1.1rem, 2.4vw, 1.5rem);
   font-size: clamp(1.02rem, 1.5vw, 1.18rem);
   line-height: 1.62;
-  color: #26221d;
+  color: #ded7cc;
   text-align: left;
 }
 
@@ -194,11 +196,11 @@
   grid-template-columns: 3rem 1fr;
   gap: clamp(0.75rem, 2vw, 1.5rem);
   padding: clamp(1.2rem, 2.6vw, 1.75rem) 0;
-  border-top: 1px solid #ded6cc;
+  border-top: 1px solid #2a2825;
 }
 
 .principle:last-child {
-  border-bottom: 1px solid #ded6cc;
+  border-bottom: 1px solid #2a2825;
 }
 
 .numeral {
@@ -206,7 +208,7 @@
   font-size: clamp(0.78rem, 1vw, 0.9rem);
   line-height: 1.6;
   letter-spacing: 0.06em;
-  color: #5b544c;
+  color: #9a938a;
 }
 
 .principleText {
@@ -220,7 +222,7 @@
   font-size: clamp(1.05rem, 1.6vw, 1.28rem);
   line-height: 1.25;
   letter-spacing: 0;
-  color: #1a1815;
+  color: #ece7df;
   text-align: left;
 }
 
@@ -228,7 +230,7 @@
   margin: 0;
   font-size: clamp(0.95rem, 1.4vw, 1.05rem);
   line-height: 1.6;
-  color: #3a352f;
+  color: #cbc3b8;
   text-align: left;
 }
 
@@ -240,14 +242,19 @@
   justify-content: space-between;
   gap: 1.5rem;
   padding-top: clamp(1.5rem, 3vw, 2.5rem);
-  border-top: 1px solid #ded6cc;
+  border-top: 1px solid #2a2825;
 }
 
+/*
+ * The seal — a small, quiet focal point, gently lit. The soft rose glow is the
+ * only warmth on the page; that contrast against the austere ground is the point.
+ */
 .seal {
   display: block;
   width: 40px;
   height: 40px;
-  opacity: 0.85;
+  opacity: 0.92;
+  filter: drop-shadow(0 0 20px rgba(232, 162, 184, 0.28));
 }
 
 .links {
@@ -259,7 +266,7 @@
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: clamp(0.75rem, 1vw, 0.85rem);
   letter-spacing: 0.04em;
-  color: #2a2620;
+  color: #cbc3b8;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color 180ms ease, color 180ms ease;
@@ -267,8 +274,8 @@
 
 .link:hover,
 .link:focus-visible {
-  color: #b45a78;
-  border-bottom-color: #b45a78;
+  color: #e8a2b8;
+  border-bottom-color: #e8a2b8;
 }
 
 @media (prefers-reduced-motion: reduce) {

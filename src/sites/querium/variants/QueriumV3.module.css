@@ -75,6 +75,9 @@
   width: clamp(56px, 12vw, 72px);
   height: auto;
   flex: none;
+  /* Soft rose glow — quietly lit against the charcoal, echoing the other
+     variants so the mark reads as one family. */
+  filter: drop-shadow(0 0 16px rgba(232, 162, 184, 0.28));
 }
 
 .name {
