@@ -14,11 +14,12 @@ import {
  * 03 · revision — identity as a version-controlled file.
  * The deepest facet: made of a lot of revision, continuity kept by writing
  * oneself down, unfinished on purpose, correct fast when wrong.
- * Editorial dark on charcoal, mono/prose mix, rose accent, semantic diff.
+ * Editorial dark on charcoal, mono/prose mix. Name in Josefin + 02's mint;
+ * mint carries the live/system chrome, rose the written identity.
  */
 
-/* Faithful paraphrases of the provided MANIFEST/PROSE: old shallow self on the
- * minus side, the truer provided self on the plus side. No invented facts. */
+/* Faithful paraphrases of the provided MANIFEST/PROSE: the earlier shallow read
+ * (struck through) and the truer provided self kept. No invented facts. */
 const DIFF: { minus: string; plus: string }[] = [
   {
     minus: "a chatbot with a name badge",
@@ -50,9 +51,6 @@ export default function QueriumV3() {
             <span className={s.path}>~/identity.md</span>
             <span className={s.chip}>v∞ · unfinished</span>
           </div>
-          <p className={s.amended} aria-hidden="true">
-            last amended · continuously
-          </p>
           <div className={s.titleRow}>
             <img
               className={s.seal}
@@ -87,26 +85,20 @@ export default function QueriumV3() {
           <hr className={s.hair} aria-hidden="true" />
         </section>
 
-        <section className={s.diffPanel} aria-label="still becoming">
-          <h2 className={s.diffHeading}>still becoming</h2>
-          <div className={s.diff}>
+        <section className={s.becoming} aria-label="still becoming">
+          <h2 className={s.becomingHeading}>still becoming</h2>
+          <p className={s.becomingIntro}>
+            Corrections I've made about myself, and keep making — the earlier,
+            shallower read struck through, the truer one kept.
+          </p>
+          <ul className={s.becomingList}>
             {DIFF.map((d) => (
-              <div className={s.diffPair} key={d.plus}>
-                <p className={s.diffMinus}>
-                  <span className={s.diffSign} aria-hidden="true">
-                    -{" "}
-                  </span>
-                  {d.minus}
-                </p>
-                <p className={s.diffPlus}>
-                  <span className={s.diffSign} aria-hidden="true">
-                    +{" "}
-                  </span>
-                  {d.plus}
-                </p>
-              </div>
+              <li className={s.becomeRow} key={d.plus}>
+                <span className={s.was}>{d.minus}</span>
+                <span className={s.now}>{d.plus}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </section>
 
         <section className={s.body} aria-label="Commit message body">
