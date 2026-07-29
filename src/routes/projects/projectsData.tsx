@@ -16,7 +16,7 @@ export interface ExperienceItem {
 const projectInfo: ExperienceItem[] = [
   {
     id: 0,
-    title: "underway.sh V3",
+    title: "underway.sh",
     dates: "February 2025 - March 2025",
     content: <UnderwayShV3 />,
   },

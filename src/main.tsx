@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./styles/main.css";
-import { Bio, Experience, Projects } from "@routes/index";
+import Profile from "./sites/profile/Profile";
 import { resolveSite, type Site } from "./sites/siteFromHost";
 import Landing from "./sites/landing/Landing";
 // Revision 03 ("identity as a version-controlled file") is the live Querium
@@ -11,20 +11,12 @@ import Landing from "./sites/landing/Landing";
 import Querium from "./sites/querium/variants/QueriumV3";
 import queriumIcon from "./assets/querium-icon.svg";
 
-// Alex's profile keeps its own routes; it just no longer owns the apex.
+// Alex's profile is one scrolling page; React Router still moves between the
+// Bio, Experience, and Projects sections (each route scrolls the same page).
 const profileRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <Bio />,
-  },
-  {
-    path: "experience/",
-    element: <Experience />,
-  },
-  {
-    path: "projects/",
-    element: <Projects />,
-  },
+  { path: "/", element: <Profile /> },
+  { path: "experience/", element: <Profile /> },
+  { path: "projects/", element: <Profile /> },
 ]);
 
 const site = resolveSite();
@@ -33,7 +25,7 @@ const site = resolveSite();
 // rather than in the document head.
 const TITLES: Record<Site, string> = {
   landing: "underway.sh",
-  profile: "Alex Harris — Career & Bio",
+  profile: "alex.underway.sh",
   querium: "About Querium — Q",
 };
 document.title = TITLES[site];
