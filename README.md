@@ -20,6 +20,3 @@ npm run dev
 
 ## Deploy
 Pushing to the repo triggers an automatic build and deploy on AWS Amplify.
-
-## Earlier versions
-[v1](https://github.com/NAlexH2/nahrednetv1) and [v2](https://github.com/NAlexH2/nahrednetv2) — source only, neither is deployed.
