@@ -229,7 +229,10 @@
 }
 .uw .exp-list .proj-item::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--jade); }
 .uw .exp-list .proj-toggle { padding: 18px 22px 18px 24px; }
-.uw .exp-list .panel-pad { padding: 2px 22px 20px 24px; }
+.uw .exp-list .panel-pad { padding: 2px 22px 20px 34px; }
+/* Work bullets: nudged ~10px further off the card edge, with the text
+   pulled to ~5px off the bullet (dot sits at 4px, is 8px wide). */
+.uw .exp-list ul.body-list li { padding-left: 17px; }
 
 /* ---------- Footer ---------- */
 .uw footer { margin-top: 60px; padding-top: 28px; border-top: 2px solid var(--navy); text-align: center; }
