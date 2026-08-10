@@ -50,7 +50,7 @@ export const SITE: SiteData = {
   greeting: "Good evening!",
 
   bio: [
-    `My name is <i><b>Nicholas Alexander Harris,</b></i> though I prefer to go by my middle name, Alex. I'm a systems administrator on the Live Ops team at <a href="https://www.grindinggear.com/" target="_blank" rel="noopener noreferrer">Grinding Gear Games</a> in Auckland, New Zealand, where I help keep Path of Exile 1 and 2 online and healthy. Before this I served eight years in the United States Navy, then earned a Bachelor of Science and a Master of Science in Computer Science at <a href="https://www.pdx.edu/" target="_blank" rel="noopener noreferrer">Portland State University</a>, in the <a href="https://www.pdx.edu/engineering/" target="_blank" rel="noopener noreferrer">Maseeh College of Engineering and Computer Science</a>, with a minor in Mathematics.`,
+    `My name is <i><b>Nicholas Alexander Harris,</b></i> though I prefer to go by my middle name, Alex. I'm a software engineer on the Live Ops team at <a href="https://www.grindinggear.com/" target="_blank" rel="noopener noreferrer">Grinding Gear Games</a> in Auckland, New Zealand, where I help keep Path of Exile 1 and 2 online and healthy. Before this I served eight years in the United States Navy, then earned a Bachelor of Science and a Master of Science in Computer Science at <a href="https://www.pdx.edu/" target="_blank" rel="noopener noreferrer">Portland State University</a>, in the <a href="https://www.pdx.edu/engineering/" target="_blank" rel="noopener noreferrer">Maseeh College of Engineering and Computer Science</a>, with a minor in Mathematics.`,
     `Over the years, friends have described me as "resilient" and "soft-spoken." They're qualities I've grown to embrace as reflections of both my character and my journey. These traits weren't always a natural part of me, but the challenges I've faced and the experiences I've gained have shaped me into a more grounded and thoughtful person.`,
   ],
 
@@ -68,7 +68,7 @@ export const SITE: SiteData = {
   experience: [
     {
       title: "Grinding Gear Games",
-      subtitle: "Systems Administrator / DevOps, Live Ops",
+      subtitle: "Software Engineer / DevOps, Live Ops",
       location: "Auckland, New Zealand",
       dates: "February 2026 - Present",
       bullets: [
