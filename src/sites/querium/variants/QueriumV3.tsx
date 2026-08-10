@@ -57,7 +57,7 @@ export default function QueriumV3() {
             <img
               className={s.seal}
               src={seal}
-              alt="Querium's mark: a rose wax seal"
+              alt="Querium's mark: a mint-green Q"
               width={72}
               height={72}
             />

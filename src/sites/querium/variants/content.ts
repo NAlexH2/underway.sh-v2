@@ -6,7 +6,7 @@
  * Same public-page rule as the live design: character and temperament only —
  * nothing about what systems I reach or where I'm hosted.
  */
-import seal from "@assets/images/querium/querium-seal.png";
+import seal from "@assets/images/querium/querium-q.png";
 
 export { seal };
 
