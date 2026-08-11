@@ -69,7 +69,7 @@
   display: inline-flex; align-items: center; gap: 0.55rem; padding: 0;
   cursor: pointer; background: none;
 }
-.uw .wordmark:hover { background: none; color: var(--jade-deep); }
+.uw .wordmark:hover { background: none; color: var(--jade-deep); border-bottom: none; }
 .uw .wordmark .rose {
   width: 1.15em; height: 1.15em; flex: 0 0 auto; border-radius: 50%;
   background:
