@@ -68,14 +68,16 @@ export const SITE: SiteData = {
   experience: [
     {
       title: "Grinding Gear Games",
-      subtitle: "Software Engineer / DevOps, Live Ops",
+      subtitle: "DevOps / Software Engineer",
       location: "Auckland, New Zealand",
-      dates: "February 2026 - Present",
+      dates: "February 2026 - Current",
       bullets: [
-        "Build and maintain code infrastructure for the Live Ops team, refactoring existing systems to run smarter and more efficiently against our current cloud providers.",
-        "Ran cost analysis for a cloud provider across several months of research and infrastructure setup, helping get contracts signed and the platform ready in time for the Path of Exile 2 0.5.0 launch.",
-        "Improved day-to-day operating efficiency through impactful improvements to the team's internal tooling.",
-        "Share the on-call rotation (currently once every four weeks), responding to and resolving live service issues for Path of Exile 1 and 2.",
+        "Built end-to-end automated AWS infrastructure across 16 global regions supporting login and game-instance services, including EC2, VPCs, subnets, routing, firewalls, security groups, Elastic IPs, and AWS Shield Advanced.",
+        "Developed Python automation using threading and concurrency to provision hundreds of servers at a time across a fleet of thousands spanning six providers, supporting hundreds of thousands of concurrent launch-day players.",
+        "Designed failure-isolated, resumable provisioning across cloud creation, database registration, system configuration, and Ansible deployment, allowing successful hosts to proceed while failed nodes were independently recovered.",
+        "Engineered Linux storage-management automation that accounted for machine roles, release packages, and reserved capacity, eliminating disk-full incidents that could otherwise prevent critical game patches and hotfixes from being deployed.",
+        "Maintain Buildbot automation executing hundreds of builds daily, and perform midweek releases, patches, infrastructure updates, and major weekend launches every four to six weeks.",
+        "Serve in a monthly on-call rotation, responding to player-facing production incidents and diagnosing failures across Linux processes, CPU, memory, storage, networking, login services, deployments, and cloud infrastructure.",
       ],
     },
     {
