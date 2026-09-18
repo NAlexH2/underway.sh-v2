@@ -1,11 +1,7 @@
 # underway.sh
 
-My personal website, built using agents.
-
-Three surfaces off one codebase:
-- **underway.sh** — the landing / hub
-- **alex.underway.sh** — bio, career, and projects
-- **q.underway.sh** — Querium
+My personal website, built using agents. **underway.sh** serves the bio,
+career, and projects profile directly from the root domain.
 
 ## Stack
 - Vite + React + TypeScript

@@ -1,6 +1,6 @@
 // Canonical copy for the site. Single-sourced. No em dashes or en dashes anywhere.
 window.SITE = {
-  wordmark: "alex.underway.sh",
+  wordmark: "underway.sh",
   name: "Nicholas Alexander Harris",
   nav: ["Bio", "Experience", "Projects"],
   greeting: "Good evening!",
@@ -101,8 +101,8 @@ window.SITE = {
         { p: `The rhythm is different. Instead of grinding alone through docs for hours, I could describe what I wanted, get a first pass, and spend my time deciding rather than typing every line. The agent handled the repetitive parts, wiring up routes, drafting components, chasing down a build that refused to cooperate, and I stayed the one steering. The result is a site I still understand end to end, built in a fraction of the time the last version took.` },
         { sub: `Why Vite?` },
         { p: `Quite simple reasoning actually: I used it before! I knew how to set it up and customize various features while learning new ones too (such as aliasing). Earlier versions of the site started as raw HTML/CSS, then a NextJS build where I found myself stressing over client and server side rendering and never quite trusting the automatic routing. With Vite I get the features I liked from NextJS while being explicit about routing through React Router, on my terms.` },
-        { sub: `One Build, Three Subdomains` },
-        { p: `underway.sh is a single build that serves three hostnames. Cloudflare handles DNS, pointing underway.sh, alex.underway.sh, and q.underway.sh at the same AWS Amplify deployment. On load, the app reads the subdomain and mounts the matching site: the root shows a landing page, alex. shows this profile, and q. shows Querium. React Router then takes over inside the profile to move between the Bio, Experience, and Projects pages.` },
+        { sub: `One Site, One Home` },
+        { p: `underway.sh is a single Vite build hosted on AWS Amplify, with Cloudflare handling DNS. The profile lives directly at the root domain, and React Router moves between the Bio, Experience, and Projects sections while keeping the experience on one scrolling page.` },
       ],
     },
     {
